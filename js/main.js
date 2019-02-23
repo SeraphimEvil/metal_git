@@ -32,7 +32,9 @@ $(document).ready(function(){
       [55.507643, 37.339613],
       [55.157876, 37.472629],
       [55.539456, 37.154590],
-      [55.679463, 37.283803]
+      [55.628720109180186,36.9642569062645],
+      [55.407263551440394,37.20381012849938],
+      [55.472783095559905,36.92950649776596]
     ];
   
     var loadMap = function () {
@@ -61,7 +63,9 @@ $(document).ready(function(){
       $(document).on('click', '.contacts__item', function (event) {
         var thisCoords = [$(this).data('w'), $(this).data('h')];
   
+        map.setZoom(16);
         map.panTo(thisCoords, {flying: 1});
+  
   
         $(this).addClass('contacts__item--active').siblings().removeClass('contacts__item--active');
       });
