@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Главная</title>
+        <link rel="stylesheet" href="css/main.css" type="text/css">
+        <meta name="viewport" content="width=device-width, maximum-scale=1">
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    </head>
+
+    <body><svg xmlns="http://www.w3.org/2000/svg" class="visually-hidden"></svg>
+        <header class="header">
+            <div class="container">
+                <div class="header__logo"><img src="./images/logo.jpg"></div>
+                <div class="header__title">лом.область.рф</div>
+                <div class="header__time">Работаем 24/7</div>
+                <div class="header__contacts">
+                    <div class="header__contacts-type">
+                        <!--| WhatsApp / Viber / Telegram--><a href="telto:89853535660" class="header__contacts-item"><img src="./images/wapp.png"></a><a href="telto:89853535660" class="header__contacts-item"><img src="./images/viber.png"></a><a href="telto:89853535660" class="header__contacts-item"><img src="./images/telegram.svg"></a></div><a href="telto:89853535660" class="header__contacts-phone">8-985-353-56-60</a>
+                </div>
+            </div>
+        </header>
+        <main id="fullpage" class="main">
+            <div class="section main-bg">
+                <div class="container">
+                    <div class="main-title">Приём чёрных и&nbsp;цветных металлов</div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="contacts">
+                        <div class="contacts__list">
+                            <div data-w="55.516221" data-h="36.968647" class="contacts__item contacts__item--active">
+                                <div class="contacts__name">Селятино</div>
+                                <div class="contacts__address">Селятино, Вокзальная, 6</div>
+                            </div>
+                            <div data-w="55.507643" data-h="37.339613" class="contacts__item">
+                                <div class="contacts__name">Ватутинки</div>
+                                <div class="contacts__address">Ватутинки, 4-я ватутинская улица</div>
+                            </div>
+                            <div data-w="55.157876" data-h="37.472629" class="contacts__item">
+                                <div class="contacts__name">Чехов</div>
+                                <div class="contacts__address">Чехов, Полиграфистов, 11к3</div>
+                            </div>
+                            <div data-w="55.539456" data-h="37.154590" class="contacts__item">
+                                <div class="contacts__name">Первомайское</div>
+                                <div class="contacts__address">Первомайское, Рабочая, 13</div>
+                            </div>
+                            <div data-w="55.679463" data-h="37.283803" class="contacts__item">
+                                <div class="contacts__name">Можайское</div>
+                                <div class="contacts__address">Можайское шоссе, 83</div>
+                            </div>
+                            <div data-w="" data-h="" class="contacts__item">
+                                <div class="contacts__name">Рассудово</div>
+                                <div class="contacts__address"></div>
+                            </div>
+                            <div data-w="" data-h="" class="contacts__item">
+                                <div class="contacts__name">Терехово</div>
+                                <div class="contacts__address"></div>
+                            </div>
+                        </div>
+                        <div id="address" class="contacts__map"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script defer>
+            (function()
+            {
+                function addFont()
+                {
+                    var style = document.createElement('style');
+                    style.rel = 'stylesheet';
+                    document.head.appendChild(style);
+                    style.textContent = localStorage.roboto;
+                }
+                try
+                {
+                    if (localStorage.roboto)
+                    {
+                        addFont();
+                    }
+                    else
+                    {
+                        var request = new XMLHttpRequest();
+                        request.open('GET', './fonts/style.css', true);
+                        request.onload = function()
+                        {
+                            if (request.status >= 200 && request.status < 400)
+                            {
+                                localStorage.roboto = request.responseText;
+                                addFont();
+                            }
+                        }
+                        request.send();
+                    }
+                }
+                catch (ex)
+                {}
+            }());
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="js/vendor.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+
+</html>
