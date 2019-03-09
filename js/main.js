@@ -1,28 +1,30 @@
 $(document).ready(function(){
   $(function () {
   
-    $('#fullpage').fullpage({
-      anchors: ['main', 'map'],
-      menu: '#menu',
-      loopHorizontal: false,
-      controlArrows: false,
+    if ($(window).width() > 767) {
+      $('#fullpage').fullpage({
+        anchors: ['main', 'map'],
+        menu: '#menu',
+        loopHorizontal: false,
+        controlArrows: false,
   
-      afterLoad: function (anchorLink) {
+        afterLoad: function (anchorLink) {
   
-      },
+        },
   
-      onLeave: function (index, nextIndex, direction) {
+        onLeave: function (index, nextIndex, direction) {
   
-      },
+        },
   
-      afterSlideLoad: function (anchorLink, index, slideAnchor, slideIndex) {
+        afterSlideLoad: function (anchorLink, index, slideAnchor, slideIndex) {
   
-      },
+        },
   
-      onSlideLeave: function (anchorLink, index, slideIndex, direction, nextSlideIndex) {
+        onSlideLeave: function (anchorLink, index, slideIndex, direction, nextSlideIndex) {
   
-      }
-    });
+        }
+      });
+    }
   
   });
   (function () {
