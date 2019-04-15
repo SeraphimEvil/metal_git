@@ -3,7 +3,7 @@ $(document).ready(function(){
   
     if ($(window).width() > 767) {
       $('#fullpage').fullpage({
-        anchors: ['main', 'services', 'map'],
+        anchors: ['main', 'services', 'order', 'about', 'map'],
         loopHorizontal: false,
         controlArrows: false,
   
