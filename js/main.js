@@ -1,6 +1,8 @@
 $(document).ready(function(){
   $(function () {
   
+    var $footerEl = $('.footer');
+  
     if ($(window).width() > 767) {
       $('#fullpage').fullpage({
         anchors: ['main', 'prices', 'about', 'order', 'services', 'map'],
@@ -8,19 +10,23 @@ $(document).ready(function(){
         controlArrows: false,
   
         afterLoad: function (anchorLink) {
+          if (anchorLink === 'map') {
+            $footerEl.addClass('footer--show');
+          } else if (anchorLink !== 'map' && $footerEl.hasClass('footer--show')) {
+            $footerEl.removeClass('footer--show');
+          }
+        },
   
+        beforeLeave: function (index, nextIndex, direction) {
         },
   
         onLeave: function (index, nextIndex, direction) {
-  
         },
   
         afterSlideLoad: function (anchorLink, index, slideAnchor, slideIndex) {
-  
         },
   
         onSlideLeave: function (anchorLink, index, slideIndex, direction, nextSlideIndex) {
-  
         }
       });
     }
